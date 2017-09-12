@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^4.2.5",
     "@angular/router": "^4.2.5",
     "core-js": "^2.4.1",
+    "ng2-dnd": "^4.2.0",
     "rxjs": "^5.4.1",
     "zone.js": "^0.8.12"
   },

@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {Todo} from './todo';
-import {TodoDataService} from './todo-data.service';
+import { Component } from '@angular/core';
+import { Todo } from './todo';
+import { TodoDataService } from './todo-data.service';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +30,10 @@ export class AppComponent {
 
   get todos() {
     return this.todoDataService.getAllTodos();
+  }
+
+  onMove(todo: Todo, position: number) {
+    this.todoDataService.moveTask(todo, position);
   }
 
 }

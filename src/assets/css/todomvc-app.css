@@ -171,6 +171,7 @@ label[for='toggle-all'] {
 
 .todo-list li .toggle {
 	text-align: center;
+	left: 20px;
 	width: 40px;
 	/* auto, since non-WebKit browsers doesn't support input styling */
 	height: auto;
@@ -218,6 +219,20 @@ label[for='toggle-all'] {
 	color: #cc9a9a;
 	margin-bottom: 11px;
 	transition: color 0.2s ease-out;
+}
+
+.todo-list li .handle {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 5px;
+	bottom: 0;
+	width: 40px;
+	height: 30px;
+	margin: auto 0;
+	font-size: 30px;
+	color: #0E0D0D;
+	margin-bottom: 11px;
 }
 
 .todo-list li .destroy:hover {
