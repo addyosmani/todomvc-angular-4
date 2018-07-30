@@ -1,6 +1,6 @@
-# TodoApp
+# TodoApp with Drag and Drop Functionality
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+This project is a fork of [Addy Osmani Angular 4 todomvc](https://github.com/addyosmani/todomvc-angular-4). It adds drag and drop functionality to it.
 
 ## Development server
 

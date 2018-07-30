@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { Todo } from './todo';
 import { TodoDataService } from './todo-data.service';
+import { By } from '@angular/platform-browser';
+import { DndModule } from 'ng2-dnd';
 
 describe('AppComponent', () => {
   let fixture;
@@ -14,7 +16,8 @@ describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        FormsModule
+        FormsModule,
+        DndModule.forRoot()
       ],
       declarations: [
         AppComponent
@@ -59,4 +62,43 @@ describe('AppComponent', () => {
     app.removeTodo(1);
     expect(todoDataService.deleteTodoById).toHaveBeenCalled();
   }));
+
+  it('should move todo at top to bottom', (done: any) => {
+    addTodo({
+      id: 1,
+      title: 'First Todo'
+    });
+    addTodo({
+      id: 2,
+      title: 'Second Todo'
+    });
+    addTodo({
+      id: 3,
+      title: 'Third Todo'
+    });
+    fixture.detectChanges();
+    const todoItemEls = fixture.debugElement.queryAll(By.css('.todo-item'));
+    const taskToDragEl = todoItemEls[0].nativeElement;
+    const taskToDropEl = todoItemEls[2].nativeElement;
+    const handleEl = fixture.debugElement.query(By.css('.handle')).nativeElement;
+    triggerEvent(handleEl, 'mousedown', 'MouseEvent');
+    triggerEvent(taskToDragEl, 'dragstart', 'MouseEvent');
+    triggerEvent(taskToDropEl, 'dragenter', 'MouseEvent');
+    triggerEvent(handleEl, 'mouseup', 'MouseEvent');
+    triggerEvent(taskToDragEl, 'drop', 'MouseEvent');
+    fixture.detectChanges();
+    expect(app.todos.map(t => t.id)).toEqual([2, 3, 1]);
+    done();
+  });
+
+  function addTodo(obj) {
+    app.newTodo = new Todo(obj);
+    app.addTodo();
+  }
+
+  function triggerEvent(elem: HTMLElement, eventName: string, eventType: string) {
+    const event: Event = document.createEvent(eventType);
+    event.initEvent(eventName, true, true);
+    elem.dispatchEvent(event);
+  }
 });

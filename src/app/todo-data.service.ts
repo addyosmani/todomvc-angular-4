@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Todo} from './todo';
+import { Injectable } from '@angular/core';
+import { Todo } from './todo';
 
 @Injectable()
 export class TodoDataService {
@@ -53,11 +53,15 @@ export class TodoDataService {
   }
 
   // Toggle todo complete
-  toggleTodoComplete(todo: Todo){
+  toggleTodoComplete(todo: Todo) {
     let updatedTodo = this.updateTodoById(todo.id, {
       complete: !todo.complete
     });
     return updatedTodo;
+  }
+
+  moveTask(todo: Todo, position: number): void {
+    console.log(`Moved ${JSON.stringify(todo)} to the position ${position}`);
   }
 
 }

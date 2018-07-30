@@ -4,9 +4,12 @@
     <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
   </header>
   <section class="main" *ngIf="todos.length > 0">
-    <ul class="todo-list">
-      <li *ngFor="let todo of todos" [class.completed]="todo.complete">
+    <ul class="todo-list" dnd-sortable-container [sortableData]="todos">
+      <li *ngFor="let todo of todos; let i = index" class="todo-item" [class.completed]="todo.complete" 
+      dnd-sortable [sortableIndex]="i" [dragEnabled]="true" [dragData]="todo"
+      dnd-droppable (onDropSuccess)="onMove($event, i)">
         <div class="view">
+          <span class="handle" dnd-sortable-handle>=</span>
           <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
           <label>{{todo.title}}</label>
           <button class="destroy" (click)="removeTodo(todo)"></button>
