@@ -1,0 +1,745 @@
+/* jhipster-needle-css-add-main JHipster will add new css style */
+#print table tbody tr:hover {
+    background:none !important;
+    color:black !important;
+}
+
+.bg-orange {
+    background-color: #ff9800 !important;
+    color: #fff;
+}
+
+.text-orange {
+    color: #ff9800 !important;
+}
+
+.bg-orange .content .text,
+.bg-orange .content .number {
+    color: #fff !important;
+}
+
+.bg-blue {
+    background-color: hsl(207, 90%, 54%) !important;
+    color: #fff;
+}
+
+.bg-blue .content .text,
+.bg-blue .content .number {
+    color: #fff !important;
+}
+
+.bg-light-blue {
+    background-color: #03a9f4 !important;
+    color: #fff;
+}
+
+.bg-light-blue .content .text,
+.bg-light-blue .content .number {
+    color: #fff !important;
+}
+
+.bg-cyan {
+    background-color: #607d8b !important;
+    color: #fff;
+}
+
+.text-cyan {
+    color: #607d8b !important
+}
+
+.bg-cyan .content .text,
+.bg-cyan .content .number {
+    color: #fff !important;
+}
+
+.bg-teal {
+    background-color: #009688 !important;
+    color: #fff;
+}
+
+.bg-teal .content .text,
+.bg-teal .content .number {
+    color: #fff !important;
+}
+
+.bg-green {
+    background-color: #4caf50 !important;
+    color: #fff;
+}
+
+.bg-green .content .text,
+.bg-green .content .number {
+    color: #fff !important;
+}
+
+.bg-light-green {
+    /*  background-color: #8bc34a !important; */
+    background-color:#1e8c82 !important;
+    color: #fff;
+}
+
+.text-light-green {
+    color: #1e8c82 !important;
+}
+
+.bg-light-green .content .text,
+.bg-light-green .content .number {
+    color: #fff !important;
+}
+
+
+/* ==============================================================
+Bootstrap tweaks
+===============================================================*/
+
+body,
+h1,
+h2,
+h3,
+h4 {
+    //font-weight: 300;
+}
+
+body {
+    background-color: #f9f9f9;
+}
+
+
+/* ==========================================================================
+Browser Upgrade Prompt
+========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+Generic styles
+========================================================================== */
+
+
+/* Error highlight on input fields */
+
+.ng-valid[required],
+.ng-valid.required {
+    //border-left: 5px solid green;
+}
+
+.ng-invalid:not(form) {
+    //border-left: 5px solid red;
+}
+
+
+/* other generic styles */
+
+.jh-card {
+    padding: 1.5%;
+    margin-top: 20px;
+    border: none;
+}
+
+.error {
+    color: white; //background-color: red;
+}
+
+.pad {
+    padding: 10px;
+}
+
+.w-40 {
+    width: 40% !important;
+}
+
+.w-60 {
+    width: 60% !important;
+}
+
+.break {
+    white-space: normal;
+    word-break: break-all;
+}
+
+.readonly {
+    background-color: #eee;
+    opacity: 1;
+}
+
+.footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+
+/* ==========================================================================
+make sure browsers use the pointer cursor for anchors, even with no href
+========================================================================== */
+
+a:hover {
+    cursor: pointer;
+}
+
+.hand {
+    cursor: pointer;
+}
+
+
+/* ==========================================================================
+Custom alerts for notification
+========================================================================== */
+
+.alerts {
+    .alert {
+        text-overflow: ellipsis;
+        pre {
+            background: none;
+            border: none;
+            font: inherit;
+            color: inherit;
+            padding: 0;
+            margin: 0;
+        }
+        .popover pre {
+            font-size: 10px;
+        }
+    }
+    .toast {
+        position: fixed;
+        width: 100%;
+        &.left {
+            left: 5px;
+        }
+        &.right {
+            right: 5px;
+        }
+        &.top {
+            top: 55px;
+        }
+        &.bottom {
+            bottom: 55px;
+        }
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .alerts .toast {
+        width: 50%;
+    }
+}
+
+
+/* ==========================================================================
+entity tables helpers
+========================================================================== */
+
+
+/* Remove Bootstrap padding from the element
+   http://stackoverflow.com/questions/19562903/remove-padding-from-columns-in-bootstrap-3 */
+
+@mixin no-padding($side) {
+    @if $side=='all' {
+        .no-padding {
+            padding: 0 !important;
+        }
+    }
+    @else {
+        .no-padding-#{$side} {
+            padding-#{$side}: 0 !important;
+        }
+    }
+}
+
+@include no-padding('left');
+@include no-padding('right');
+@include no-padding('top');
+@include no-padding('bottom');
+@include no-padding('all');
+
+/* bootstrap 3 input-group 100% width
+   http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
+
+.width-min {
+    width: 1% !important;
+}
+
+
+/* Makes toolbar not wrap on smaller screens
+   http://www.sketchingwithcss.com/samplechapter/cheatsheet.html#right */
+
+.flex-btn-group-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+
+/* ==========================================================================
+entity detail page css
+========================================================================== */
+
+.row.jh-entity-details> {
+    dd {
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .row.jh-entity-details> {
+        dt {
+            margin-bottom: 15px;
+        }
+        dd {
+            border-bottom: 1px solid #eee;
+            padding-left: 180px;
+            margin-left: 0;
+        }
+    }
+}
+
+
+/* ==========================================================================
+ui bootstrap tweaks
+========================================================================== */
+
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+    cursor: pointer;
+}
+
+.datetime-picker-dropdown>li.date-picker-menu div>table .btn-default,
+.uib-datepicker-popup>li>div.uib-datepicker>table .btn-default {
+    border: 0;
+}
+
+.datetime-picker-dropdown>li.date-picker-menu div>table:focus,
+.uib-datepicker-popup>li>div.uib-datepicker>table:focus {
+    outline: none;
+}
+
+
+/* jhipster-needle-scss-add-main JHipster will add new css style */
+
+.modal-dialog.modal-lg,
+.modal-dialog.modal-lg .modal-content {
+    margin: 0;
+    height: 100%;
+    overflow: overlay;
+}
+
+.modal-footer {
+    border-top: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1 !important; //z-index: 1000;
+    background: #eee;
+}
+
+.modal-body {
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.modal-header {
+    font-size: 1.4em;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(96, 125, 139);
+    color: white;
+    font-weight: bold;
+}
+
+.modal-header button.close {
+    color: white;
+}
+
+#print-container {
+    top: auto;
+    left: auto;
+    right: 1px;
+    bottom: 1px;
+    z-index: 9999;
+    position: fixed;
+    min-width: 120px;
+    line-height: 32px;
+    color: black;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+#print-container #print-picker {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+#print-picker {
+    display: none;
+}
+
+#print-picker.open {
+    display: block;
+}
+
+.print-toggle {
+    cursor: pointer;
+    margin-bottom: 2px;
+    color: #fff;
+    background-color: #607d8b;
+    border-color: #20a8d8;
+    text-align: center;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.pagination li.active a.page-link {
+    background-color: #607d8b;
+    border-color: #607d8b;
+}
+
+.lever {
+    margin-left: 150px !important;
+}
+
+span.fa.fa-plus+span {
+    display: none;
+}
+
+td {
+    padding: 2px 5px !important;
+}
+
+td button {
+    height: 25px !important;
+    width: 30px !important;
+    margin-left: 4px !important;
+}
+
+.main {
+    margin-bottom: 50px !important;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+}
+
+.popup-content {
+    display: none;
+    position: fixed;
+    right: 70px;
+    background-color: #f9f9f9;
+    min-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 9999;
+    margin-top: -20px;
+}
+
+.popup:hover .popup-content {
+    display: block;
+}
+
+.popup-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 12px 16px;
+    margin: 0;
+    height: 40px;
+    text-align: left;
+    outline: none;
+}
+
+.popup-content a:active {
+    //background-color: #f1f1f1;
+}
+
+.popup-content a:first-child {
+    padding-top: 5px;
+}
+
+.popup-content a:last-child {
+    padding-bottom: 5px;
+}
+
+.checkParent {
+    top: 7px;
+    position: relative;
+}
+
+button.btn.btn-primary.float-right {
+    border-radius: 50%;
+    background-color: #607d8b !important;
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #607d8b;
+}
+
+#currentSearch+.btn-floating.waves-effect.waves-light,
+#currentSearch+.btn-floating.waves-effect.waves-light:hover {
+    background: #607d8b;
+}
+
+#currentSearch+.btn-floating.waves-effect.waves-light+.btn-floating.waves-effect.waves-light,
+#currentSearch+.btn-floating.waves-effect.waves-light+.btn-floating.waves-effect.waves-light:hover {
+    background: #f86c6b;
+}
+
+.btn-group.flex-btn-group-container .btn.btn-info.btn-sm {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+    color: #63c2de;
+}
+
+.btn-group.flex-btn-group-container .btn.btn-info.btn-sm:hover {
+    background-color: #63c2de !important;
+    color: white !important;
+}
+
+.btn-group.flex-btn-group-container .btn.btn-primary.btn-sm {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+    color: #20a8d8;
+}
+
+.btn-group.flex-btn-group-container .btn.btn-primary.btn-sm:hover {
+    background-color: #20a8d8 !important;
+    color: white !important;
+}
+
+.btn-group.flex-btn-group-container .btn.btn-danger.btn-sm {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+    color: #f86c6b;
+}
+
+.btn-group.flex-btn-group-container .btn.btn-danger.btn-sm:hover {
+    background-color: #f86c6b !important;
+    color: white !important;
+}
+
+.btn-group.flex-btn-group-container span.fa {
+    display: block; //padding-bottom: 30px;
+}
+
+input#currentSearch {
+    border-bottom-width: 1px !important;
+    border-bottom-color: rgba(96, 125, 139, 0.15) !important;
+}
+
+tr {
+    border: none !important;
+}
+
+tbody tr:hover {
+    background: #5f7d8a !important;
+    cursor: pointer;
+    color: white !important;
+    font-weight: 400 !important;
+}
+
+tbody tr:hover .btn,
+tbody tr:hover .ui i {
+    color: white !important;
+}
+
+td .produit-cible {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: lowercase;
+}
+
+label {
+    color: #333 !important;
+}
+
+h2>span,
+.col-sm-5 h4 {
+    display: none;
+}
+
+.form-inline button.btn-floating.waves-effect.waves-light {
+    width: 30px;
+    height: 30px;
+    line-height: 2px;
+}
+
+jhi-alert+.row .col-sm-12 {
+    margin-top: -9px;
+    height: 60px;
+}
+
+jhi-alert+.row {
+    margin-bottom: 0px;
+}
+
+
+/* .container-fluid div:nth-child(1) {
+    margin-top: -40px !important;
+} */
+
+label.oblige:after,
+span.oblige:after {
+    content: ' *';
+    color: red;
+}
+
+.btn-group.flex-btn-group-container .ui.floating.labeled.icon.dropdown.button {
+    background: transparent;
+    cursor: default;
+    span.text:first {
+        display: none !important;
+    }
+    i.ellipsis.vertical.icon,
+    i.print.icon {
+        cursor: pointer;
+        background: transparent;
+        margin-left: 50px;
+        font-size: larger;
+    }
+}
+
+.ui.floating.labeled.icon.dropdown.button>span.text {
+    display: none !important;
+}
+
+.ui.floating.labeled.icon.dropdown.button {
+    height: 25px;
+}
+
+.ui.compact.selection.dropdown {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    z-index: 999;
+}
+
+.ui.compact.selection.dropdown.active.visible {
+    width: 195px !important;
+}
+
+tr.current {
+    background: rgba(21, 157, 236, 0.06) !important;
+}
+
+input:read-only {
+    border-bottom: none !important;
+}
+
+.ui.search.dropdown.active>input.search,
+.ui.search.dropdown.visible>input.search {
+    padding-top: 0px !important;
+}
+
+.ui.dropdown .menu {
+    left: auto !important;
+    right: 0 !important;
+}
+
+.btn-group.flex-btn-group-container .ui.dropdown {
+    color: black;
+    border-radius: 50%;
+    width: 30px;
+    height: 25px;
+}
+
+.btn-group.flex-btn-group-container .ui.dropdown:hover {
+    background-color: #607d8b !important;
+    color: white !important;
+    border-radius: 50%;
+    width: 30px;
+    height: 25px;
+}
+
+.btn-group.flex-btn-group-container .ui.dropdown .ellipsis.vertical.icon,
+.btn-group.flex-btn-group-container .ui.dropdown>.print.icon {
+    margin: auto;
+    display: block;
+    padding-top: 4px;
+    font-size: small;
+}
+
+.dateHide {
+    display: none;
+}
+
+.ui.tiny .actions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sfd-dropdown {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid #9e9e9e !important;
+    border-radius: 0px !important;
+    height: auto !important;
+}
+
+.signal {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    .red {
+        background: red;
+    }
+    .green {
+        background: green;
+    }
+}
+
+th {
+    white-space: nowrap !important;
+}
+
+.sub-alert-badge {
+    display: none;//inline;
+    background: #74d950;
+    padding: 3px;
+    border-radius: 50%;
+    min-width: 10px;
+    font-weight: bold;
+    min-height: 10px;
+    margin-left:5px;
+}
+
+.ui.modal .scrolling.content {
+    overflow: hidden !important;
+}
+
+.modal {
+    /*  width: 90%; */
+    min-height: 90vh !important;
+}
