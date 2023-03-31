@@ -1,0 +1,71 @@
+{
+  "name": "qrcode",
+  "description": "QRCode / 2d Barcode api with both server side and client side support using canvas",
+  "version": "1.2.0",
+  "author": "Ryan Day <soldair@gmail.com>",
+  "contributors": [
+    "Vincenzo Greco <greco.vincenzo@gmail.com>"
+  ],
+  "keywords": [
+    "canvas",
+    "qrcode",
+    "barcode"
+  ],
+  "main": "./lib/index.js",
+  "browser": {
+    "./lib/index.js": "./lib/browser.js",
+    "./lib/utils/buffer.js": "./lib/utils/typedarray-buffer.js",
+    "fs": false
+  },
+  "files": [
+    "bin",
+    "build",
+    "lib",
+    "helper"
+  ],
+  "homepage": "http://github.com/soldair/node-qrcode",
+  "license": "MIT",
+  "scripts": {
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "test": "node test.js",
+    "build": "node build.js",
+    "prepublish": "npm run build"
+  },
+  "bin": {
+    "qrcode": "./bin/qrcode"
+  },
+  "dependencies": {
+    "can-promise": "^0.0.1",
+    "dijkstrajs": "^1.0.1",
+    "isarray": "^2.0.1",
+    "pngjs": "^3.3.0",
+    "yargs": "^8.0.2"
+  },
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "canvas": "^1.6.4",
+    "canvasutil": "*",
+    "colors": "*",
+    "express": "2.5.x",
+    "htmlparser2": "^3.9.2",
+    "os-tmpdir": "^1.0.2",
+    "sinon": "^1.17.7",
+    "standard": "^9.0.2",
+    "tap": "^10.3.1",
+    "uglify-js": "^2.7.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/soldair/node-qrcode.git"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "standard": {
+    "ignore": [
+      "build/",
+      "examples/vendors/"
+    ]
+  }
+}
